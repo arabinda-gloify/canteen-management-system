@@ -3,9 +3,6 @@ from user.models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
-	is_active = serializers.ReadOnlyField()
-	email = serializers.ReadOnlyField()
-	created_at = serializers.ReadOnlyField()
 	class Meta:
 		model = User
 		fields = [
@@ -16,5 +13,5 @@ class UserSerializer(serializers.ModelSerializer):
 			"last_name",
 			"gender",
 			"is_active",
-			"created_at",
+			# "created_at",
 		]

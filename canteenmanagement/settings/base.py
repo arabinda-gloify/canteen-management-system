@@ -129,7 +129,7 @@ REST_FRAMEWORK = {
 import datetime
 JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX':'JWT',
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=600)
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=60000)
 }
 
 

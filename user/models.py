@@ -9,22 +9,21 @@ from django.utils.translation import gettext_lazy as _
 
 class UserManager(BaseUserManager):
 	def create_user(self, email, first_name, last_name, password=None):
-		
-	    if not email:
-	    	raise ValueError(_('Users must have an email address'))
-	    if not first_name:
-	    	raise ValueError(_('Users must have a first name'))
-	    if not last_name:
-	    	raise ValueError(_('Users must have a last name'))
+		if not email:
+			raise ValueError(_('Users must have an email address'))
+		if not first_name:
+			raise ValueError(_('Users must have a first name'))
+		if not last_name:
+			raise ValueError(_('Users must have a last name'))
 	    
-	    user = self.model(
-	      email=self.normalize_email(email),
-	      first_name=first_name,
-	      last_name=last_name,
-        )
-	    user.set_password(password)
-	    user.save(using=self._db)
-	    return user
+		user = self.model(
+			email=self.normalize_email(email),
+			first_name=first_name,
+			last_name=last_name,
+			)
+		user.set_password(password)
+		user.save(using=self._db)
+		return user
 
 	def create_superuser(self, email, first_name, last_name, password):
 		"""
@@ -65,19 +64,54 @@ class User(AbstractBaseUser):
                               choices=GENDER_CHOICES, blank=True, null=True)
     
 	objects = UserManager()
+	groups = models.ManyToManyField('auth.Group',  blank=True, null=True, related_name = "user_roles")
 
 	USERNAME_FIELD = "email"
-	REQUIRED_FIELDS = ['first_name', 'last_name']
+	# REQUIRED_FIELDS = ['first_name', 'last_name']
 
 	def __str__(self):
-		return self.first_name + "," + self.email
+		return self.first_name + " | " + self.email
+
+	# def has_perm(self, perm, obj=None):
+	# 	# "Does the user have a specific permission?"
+ #    	# Simplest possible answer: Yes, always
+	# 	return True
+
+	# def has_module_perms(self, app_label):
+	# 	# "Does the user have permissions to view the app `app_label`?"
+	# 	# Simplest possible answer: Yes, always
+	# 	return True
+
+
+	# def has_perm(self, perm, obj=None):
+	# 	user_perms = []
+ #        if self.is_staff:
+ #            groups = self.groups.all()
+ #            for group in groups:
+ #                perms = [("{0}.{1}".format(x.content_type.app_label, x.codename)) for x in group.permissions.all()]
+ #                user_perms += perms
+
+ #            if perm in user_perms:
+ #                return True
+ #        return (self.is_admin or self.is_superuser)
+
+ #    def has_module_perms(self, app_label):
+ #        "Does the user have permissions to view the app `app_label`?"
+ #        return True
+
 
 	def has_perm(self, perm, obj=None):
-		"Does the user have a specific permission?"
-    	# Simplest possible answer: Yes, always
-		return True
+		user_perms = []
+		if self.is_staff:
+			groups = self.groups.all()
+			for group in groups:
+				perms = [("{0}.{1}".format(x.content_type.app_label, x.codename)) for x in group.permissions.all()]
+				user_perms += perms
+
+			if perm in user_perms:
+				return True
+		return (self.is_admin or self.is_superuser)
 
 	def has_module_perms(self, app_label):
 		"Does the user have permissions to view the app `app_label`?"
-		# Simplest possible answer: Yes, always
 		return True
