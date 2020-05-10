@@ -41,6 +41,12 @@ INSTALLED_APPS = [
 
     # My Apps
     'user',
+    'menu',
+    'today_special',
+    'breakfast',
+    'lunch',
+    'snacks',
+    'dinner',
 
     # Third Party Apps
     'rest_framework',
