@@ -72,32 +72,6 @@ class User(AbstractBaseUser):
 	def __str__(self):
 		return self.first_name + " | " + self.email
 
-	# def has_perm(self, perm, obj=None):
-	# 	# "Does the user have a specific permission?"
- #    	# Simplest possible answer: Yes, always
-	# 	return True
-
-	# def has_module_perms(self, app_label):
-	# 	# "Does the user have permissions to view the app `app_label`?"
-	# 	# Simplest possible answer: Yes, always
-	# 	return True
-
-
-	# def has_perm(self, perm, obj=None):
-	# 	user_perms = []
- #        if self.is_staff:
- #            groups = self.groups.all()
- #            for group in groups:
- #                perms = [("{0}.{1}".format(x.content_type.app_label, x.codename)) for x in group.permissions.all()]
- #                user_perms += perms
-
- #            if perm in user_perms:
- #                return True
- #        return (self.is_admin or self.is_superuser)
-
- #    def has_module_perms(self, app_label):
- #        "Does the user have permissions to view the app `app_label`?"
- #        return True
 
 
 	def has_perm(self, perm, obj=None):
