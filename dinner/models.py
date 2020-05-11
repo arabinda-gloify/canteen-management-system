@@ -11,10 +11,10 @@ class Dinner(models.Model):
 	updated = models.DateTimeField(auto_now=True)
 	is_active = models.BooleanField(default=True)
 	created_by = models.ForeignKey(User, 
-									on_delete=models.CASCADE,
+									on_delete=models.CASCADE, null=True,
 									related_name='dinner_created_by')
 	updated_by = models.ForeignKey(User, 
-									on_delete=models.CASCADE,
+									on_delete=models.CASCADE, null=True,
 									related_name='dinner_updated_by')
 
 	def __str__(self):

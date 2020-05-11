@@ -11,7 +11,7 @@ from dinner.models import Dinner
 # Create your models here.
 
 class Menu(models.Model):
-	name = models.CharField(default="anything", blank=True, null=True, max_length=255)
+	name = models.CharField(default="Today's Menu", blank=True, null=True, max_length=255)
 	description = models.TextField(blank=True, null=True)
 	today_special = models.ForeignKey(TodaySpecial, on_delete=models.CASCADE, null=True)
 	breakfast = models.ForeignKey(Breakfast, on_delete=models.CASCADE, null=True)
@@ -22,10 +22,10 @@ class Menu(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 	created_by = models.ForeignKey(User, 
-									on_delete=models.CASCADE,
+									on_delete=models.CASCADE, null=True,
 									related_name='menu_created_by')
 	updated_by = models.ForeignKey(User, 
-									on_delete=models.CASCADE,
+									on_delete=models.CASCADE, null=True,
 									related_name='menu_updated_by')
 	
 	def __str__(self):
