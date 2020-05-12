@@ -9,6 +9,18 @@ class MenuListCreateView(ListCreateAPIView):
 	queryset = Menu.objects.all()
 	serializer_class = MenuSerializer
 
+	ordering_fields = ['id',]
+	search_fields = [
+				'name', 
+				'description',
+			]
+
 class MenuDetailView(RetrieveUpdateDestroyAPIView):
 	queryset = Menu.objects.all()
 	serializer_class = MenuSerializer
+
+	ordering_fields = ['id',]
+	search_fields = [
+				'name', 
+				'description',
+			]

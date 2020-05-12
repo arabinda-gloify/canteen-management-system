@@ -13,11 +13,11 @@ class MenuAdmin(admin.ModelAdmin):
 	list_per_page = 4
 
 
-	list_display_links = ['name','description',]
+	list_display_links = ['name','description']
 
-	# list_editable = ['today_special',]
+	# list_editable = ['name',]
 
-	search_fields = ['name',]
+	search_fields = ['name', 'description']
 
 	list_filter = ['name',]
 
