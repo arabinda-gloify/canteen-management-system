@@ -5,7 +5,6 @@ from breakfast.models import Breakfast
 from lunch.models import Lunch
 from snacks.models import Snacks
 from dinner.models import Dinner
-# from breakfast.serializers import BreakfastSerializer
 
 
 
@@ -16,7 +15,7 @@ class Menu(models.Model):
 	name = models.CharField(default="Today's Menu", blank=True, null=True, max_length=255)
 	description = models.TextField(blank=True, null=True)
 	today_special = models.ForeignKey(TodaySpecial, on_delete=models.CASCADE, null=True)
-	breakfast = models.ForeignKey(Breakfast, on_delete=models.CASCADE, null=True, related_name='breakfast_inside_menu')
+	breakfast = models.ForeignKey(Breakfast, on_delete=models.CASCADE, null=True)
 	lunch = models.ForeignKey(Lunch, on_delete=models.CASCADE, null=True)
 	snacks = models.ForeignKey(Snacks, on_delete=models.CASCADE, null=True)
 	dinner = models.ForeignKey(Dinner, on_delete=models.CASCADE, null=True)
