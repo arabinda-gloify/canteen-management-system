@@ -13,8 +13,11 @@ from rest_framework.permissions import (
 class UserModelViewSet(ModelViewSet):
 	queryset = User.objects.all()
 	serializer_class = UserSerializer
-	permission_classes = [AllowAny,]
+	permission_classes = [IsAdminUser,]
 	
 
 	search_fields = ('first_name',)
+
 	ordering_fields = ('id',)
+	
+	# filterset_fields = []

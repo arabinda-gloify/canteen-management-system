@@ -11,12 +11,8 @@ class Breakfast(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 	is_active = models.BooleanField(default=True)
-	created_by = models.ForeignKey(User, 
-									on_delete=models.CASCADE, null=True,
-									related_name='breakfast_created_by')
-	updated_by = models.ForeignKey(User, 
-									on_delete=models.CASCADE, null=True,
-									related_name='breakfast_updated_by')
+	created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='+')
+	updated_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='+')
 
 	def __str__(self):
 		return self.item_name
