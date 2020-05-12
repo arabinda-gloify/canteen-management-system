@@ -1,10 +1,9 @@
 from rest_framework import serializers
-from snacks.models import Snacks 
+from dinner.models import Dinner 
 
-class SnacksSerializer(serializers.ModelSerializer):
-	
+class DinnerSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = Snacks
+		model = Dinner
 		fields = [
 			'id', 
 			'item_name',

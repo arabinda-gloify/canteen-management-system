@@ -31,4 +31,6 @@ urlpatterns = [
     path('api/menu/', include('menu.urls')),
     path('api/breakfast/', include('breakfast.urls')),
     path('api/today-special/', include('today_special.urls')),
+    path('api/snacks/', include('snacks.urls')),
+    path('api/dinner/', include('dinner.urls')),
 ]
