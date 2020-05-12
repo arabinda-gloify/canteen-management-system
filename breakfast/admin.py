@@ -5,16 +5,17 @@ from breakfast.models import Breakfast
 # Register your models here.
 class BreakfastAdmin(admin.ModelAdmin):
 	list_display = [
+			'menu',
 			'item_name',
 			'item_price',
 			'created',
 			'is_active',
-			'created_by',
+			# 'created_by',
 		]
 	list_per_page = 5
 
 
-	list_display_links = ['item_name',]
+	list_display_links = ['item_name', 'menu']
 
 	list_editable = ['item_price',]
 
@@ -26,6 +27,7 @@ class BreakfastAdmin(admin.ModelAdmin):
 		# while creating user these field comes
 		'item_name',
 		'item_price',
+		'menu',
 	]
 
 admin.site.register(Breakfast, BreakfastAdmin)
