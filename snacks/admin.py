@@ -10,11 +10,12 @@ class SnacksAdmin(admin.ModelAdmin):
 			'created',
 			'is_active',
 			'created_by',
+			'menu',
 		]
-	list_per_page = 5
+	list_per_page = 4
 
 
-	list_display_links = ['item_name',]
+	list_display_links = ['item_name', 'menu']
 
 	list_editable = ['item_price',]
 
@@ -26,6 +27,7 @@ class SnacksAdmin(admin.ModelAdmin):
 		# while creating user these field comes
 		'item_name',
 		'item_price',
+		'menu',
 	]
 
 admin.site.register(Snacks, SnacksAdmin)
