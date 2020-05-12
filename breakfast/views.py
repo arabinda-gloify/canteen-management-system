@@ -9,6 +9,18 @@ class BreakfastListView(generics.ListCreateAPIView):
 	queryset = Breakfast.objects.all()
 	serializer_class = BreakfastSerializer
 
+	ordering_fields = ['id',]
+	search_fields = [
+				'item_name', 
+				'item_price',
+			]
+
 class BreakfastDetailView(generics.RetrieveUpdateDestroyAPIView):
 	queryset = Breakfast.objects.all()
 	serializer_class = BreakfastSerializer
+
+	ordering_fields = ['id',]
+	search_fields = [
+				'item_name', 
+				'item_price',
+			]
