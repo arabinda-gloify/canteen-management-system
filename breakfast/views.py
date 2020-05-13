@@ -15,6 +15,7 @@ class BreakfastListView(generics.ListCreateAPIView):
 	permission_classes = [IsAuthenticatedOrReadOnly,]
 
 	ordering_fields = ['id',]
+
 	search_fields = [
 				'item_name', 
 				'item_price',
@@ -26,6 +27,7 @@ class BreakfastDetailView(generics.RetrieveUpdateDestroyAPIView):
 	permission_classes = [IsAdminUser,]
 
 	ordering_fields = ['id',]
+	
 	search_fields = [
 				'item_name', 
 				'item_price',

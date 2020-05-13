@@ -17,6 +17,7 @@ class TodaySpecialListCreateView(generics.ListCreateAPIView):
 
 
 	ordering_fields = ['id',]
+
 	search_fields = [
 				'item_name', 
 				'item_price',
@@ -29,6 +30,7 @@ class TodaySpecialDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 	ordering_fields = ['id',]
+	
 	search_fields = [
 				'item_name', 
 				'item_price',

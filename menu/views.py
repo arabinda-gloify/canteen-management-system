@@ -10,6 +10,7 @@ class MenuListCreateView(ListCreateAPIView):
 	serializer_class = MenuSerializer
 
 	ordering_fields = ['id',]
+
 	search_fields = [
 				'name', 
 				'description',
@@ -20,6 +21,7 @@ class MenuDetailView(RetrieveUpdateDestroyAPIView):
 	serializer_class = MenuSerializer
 
 	ordering_fields = ['id',]
+	
 	search_fields = [
 				'name', 
 				'description',
