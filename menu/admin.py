@@ -1,5 +1,5 @@
 from django.contrib import admin
-from menu.models import Menu
+from menu.models import Menu, Canteen
 
 admin.site.site_header = "Menu Items"
 
@@ -32,3 +32,4 @@ class MenuAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Menu, MenuAdmin)
+admin.site.register(Canteen)

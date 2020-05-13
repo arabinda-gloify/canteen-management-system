@@ -20,3 +20,16 @@ class Menu(models.Model):
 	def __str__(self):
 		return self.name
 
+class Canteen(models.Model):
+	name = models.CharField(default="Desi Canteen", blank=True, null=True, max_length=255)
+	address = models.TextField(blank=True, null=True)
+	phone_no = models.CharField(blank=True, null=True, max_length=13)
+	email = models.EmailField(unique=True, blank=False, null=False)
+	created_by = models.ForeignKey(User, 
+									on_delete=models.CASCADE, null=True,
+									related_name='+')
+	updated_by = models.ForeignKey(User, 
+									on_delete=models.CASCADE, null=True,
+									related_name='+')
+	def __str__(self):
+		return self.name

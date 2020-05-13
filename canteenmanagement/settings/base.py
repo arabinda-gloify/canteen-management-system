@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'lunch',
     'snacks',
     'dinner',
+    'invoice',
 
     # Third Party Apps
     'rest_framework',
