@@ -64,7 +64,7 @@ class User(AbstractBaseUser):
                               choices=GENDER_CHOICES, blank=True, null=True)
     
 	objects = UserManager()
-	groups = models.ManyToManyField('auth.Group',  blank=True, null=True, related_name = "user_roles")
+	groups = models.ManyToManyField('auth.Group')
 
 	USERNAME_FIELD = "email"
 	# REQUIRED_FIELDS = ['first_name', 'last_name']

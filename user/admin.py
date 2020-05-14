@@ -33,3 +33,4 @@ class UserAdmin(admin.ModelAdmin):
 		return "{}  {}".format(obj.first_name, obj.last_name)
 
 admin.site.register(User, UserAdmin)
+admin.site.unregister(Group)

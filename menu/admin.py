@@ -1,7 +1,7 @@
 from django.contrib import admin
 from menu.models import Menu, Canteen
 
-admin.site.site_header = "Menu Items"
+admin.site.site_header = "Canteen Management System"
 
 # Register your models here.
 class MenuAdmin(admin.ModelAdmin):
