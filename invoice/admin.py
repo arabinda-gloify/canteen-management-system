@@ -9,19 +9,13 @@ class InvoiceAdmin(admin.ModelAdmin):
 			'date_of_issue',
 			'unit_price',
 			'discount_amount',
-			# 'canteen.name',
-			# 'user.username',
 			'total_price',
 			'is_active',
-			# 'created_by',
 		]
 	list_per_page = 5
 
 
-	# list_display_links = ['invoice_number', 'canteen.name']
-
-	# list_editable = ['item_price',]
-
+	
 	search_fields = ['invoice_number',]
 
 	list_filter = ['invoice_number',]
