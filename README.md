@@ -1,10 +1,10 @@
 # canteen-management-system
 
-* `Generate token for authentication : http://localhost:8000/api/generate-token/`
+###  Generate token for authentication : http://localhost:8000/api/generate-token/
 
-###Screenshots
+#### Screenshots
 
-####Using Browser:
+#### Using Browser:
 
 <p align="center">
 
