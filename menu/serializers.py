@@ -1,10 +1,82 @@
 from rest_framework import serializers
-from .models import Menu
-from breakfast.serializers import BreakfastSerializer
-from today_special.serializers import TodaySpecialSerializer
-from lunch.serializers import LunchSerializer
-from snacks.serializers import SnacksSerializer
-from dinner.serializers import DinnerSerializer
+from menu.models import (
+				Menu, 
+				Breakfast, 
+				TodaySpecial, 
+				Lunch, 
+				Snacks, 
+				Dinner
+)
+
+
+
+
+		
+
+
+
+class BreakfastSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Breakfast
+		fields = [
+			'id', 
+			'item_name',
+			'item_price',
+		]
+
+		read_only_fields = ["id", "is_active"]
+
+
+class DinnerSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Dinner
+		fields = [
+			'id', 
+			'item_name',
+			'item_price',
+		]
+
+		read_only_fields = ["id", "is_active"]
+
+
+
+class LunchSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Lunch
+		fields = [
+			'id', 
+			'item_name',
+			'item_price',
+		]
+
+		read_only_fields = ["id", "is_active"]
+
+
+
+class SnacksSerializer(serializers.ModelSerializer):
+	
+	class Meta:
+		model = Snacks
+		fields = [
+			'id', 
+			'item_name',
+			'item_price',
+		]
+
+		read_only_fields = ["id", "is_active"]
+
+
+
+class TodaySpecialSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = TodaySpecial
+		fields = [
+			'id', 
+			'item_name',
+			'item_price',
+		]
+
+		read_only_fields = ["id", "is_active"]
 
 
 

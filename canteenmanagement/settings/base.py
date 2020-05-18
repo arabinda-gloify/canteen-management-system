@@ -42,12 +42,13 @@ INSTALLED_APPS = [
     # My Apps
     'user',
     'menu',
-    'today_special',
-    'breakfast',
-    'lunch',
-    'snacks',
-    'dinner',
+    # 'today_special',
+    # 'breakfast',
+    # 'lunch',
+    # 'snacks',
+    # 'dinner',
     'invoice',
+    # 'order',
 
     # Third Party Apps
     'rest_framework',
