@@ -48,7 +48,7 @@ class Menu(models.Model):
 
 
 class Breakfast(models.Model):
-	menu = models.ForeignKey(Menu, on_delete=models.CASCADE, null=True, related_name="breakfast")
+	menu = models.ManyToManyField(Menu, related_name="breakfast")
 	item_name = models.CharField(default="", blank=True, max_length=250)
 	item_price = models.DecimalField(max_digits=6, decimal_places=2, default="")
 	created = models.DateTimeField(auto_now_add=True)
@@ -63,7 +63,7 @@ class Breakfast(models.Model):
 
 
 class Dinner(models.Model):
-	menu = models.ForeignKey(Menu, on_delete=models.CASCADE, null=True, related_name="dinner")
+	menu = models.ManyToManyField(Menu, related_name="dinner")
 	item_name = models.CharField(max_length=255, default="")
 	item_price = models.DecimalField(max_digits=6, decimal_places=2, default="")
 	created = models.DateTimeField(auto_now_add=True)
@@ -84,7 +84,7 @@ class Dinner(models.Model):
 	
 	
 class Lunch(models.Model):
-	menu = models.ForeignKey(Menu, on_delete=models.CASCADE, null=True, related_name="lunch")
+	menu = models.ManyToManyField(Menu, related_name="lunch")
 	item_name = models.CharField(max_length=255, default="")
 	item_price = models.DecimalField(max_digits=6, decimal_places=2, default="")
 	created = models.DateTimeField(auto_now_add=True)
@@ -104,7 +104,7 @@ class Lunch(models.Model):
 
 
 class Snacks(models.Model):
-	menu = models.ForeignKey(Menu, on_delete=models.CASCADE, null=True, related_name="snacks")
+	menu = models.ManyToManyField(Menu, related_name="snacks")
 	item_name = models.CharField(max_length=255, default="")
 	item_price = models.DecimalField(max_digits=6, decimal_places=2, default="")
 	created = models.DateTimeField(auto_now_add=True)
@@ -122,7 +122,7 @@ class Snacks(models.Model):
 	
 
 class TodaySpecial(models.Model):
-	menu = models.ForeignKey(Menu, on_delete=models.CASCADE, null=True, related_name="today_special")
+	menu = models.ManyToManyField(Menu, related_name="today_special")
 	item_name = models.CharField(max_length=255, default="")
 	item_price = models.DecimalField(max_digits=6, decimal_places=2, default="")
 	created = models.DateTimeField(auto_now_add=True)

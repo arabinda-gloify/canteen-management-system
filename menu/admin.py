@@ -9,7 +9,7 @@ class MenuAdmin(admin.ModelAdmin):
 			'name',
 			'description',
 			
-		]
+		] 
 	list_per_page = 4
 
 
@@ -37,7 +37,7 @@ admin.site.register(Menu, MenuAdmin)
 
 class BreakfastAdmin(admin.ModelAdmin):
 	list_display = [
-			'menu',
+			# 'menu',
 			'item_name',
 			'item_price',
 			'created',
@@ -47,7 +47,7 @@ class BreakfastAdmin(admin.ModelAdmin):
 	list_per_page = 5
 
 
-	list_display_links = ['item_name', 'menu']
+	list_display_links = ['item_name', ]
 
 	list_editable = ['item_price',]
 
@@ -59,7 +59,7 @@ class BreakfastAdmin(admin.ModelAdmin):
 		# while creating user these field comes
 		'item_name',
 		'item_price',
-		'menu',
+		# 'menu',
 	]
 
 admin.site.register(Breakfast, BreakfastAdmin)
@@ -73,12 +73,12 @@ class DinnerAdmin(admin.ModelAdmin):
 			'created',
 			'is_active',
 			'created_by',
-			'menu',
+			# 'menu',
 		]
 	list_per_page = 5
 
 
-	list_display_links = ['item_name','menu']
+	list_display_links = ['item_name',]
 
 	list_editable = ['item_price',]
 
@@ -104,12 +104,12 @@ class LunchAdmin(admin.ModelAdmin):
 			'created',
 			'is_active',
 			'created_by',
-			'menu',
+			# 'menu',
 		]
 	list_per_page = 5
 
 
-	list_display_links = ['item_name', 'menu']
+	list_display_links = ['item_name', ]
 
 	list_editable = ['item_price',]
 
@@ -136,12 +136,12 @@ class SnacksAdmin(admin.ModelAdmin):
 			'created',
 			'is_active',
 			'created_by',
-			'menu',
+			# 'menu',
 		]
 	list_per_page = 4
 
 
-	list_display_links = ['item_name', 'menu']
+	list_display_links = ['item_name', ]
 
 	list_editable = ['item_price',]
 
@@ -167,12 +167,12 @@ class TodaySpecialAdmin(admin.ModelAdmin):
 			'created',
 			'is_active',
 			'created',
-			'menu',
+			# 'menu',
 		]
 	list_per_page = 4
 
 
-	list_display_links = ['item_name', 'menu',]
+	list_display_links = ['item_name',]
 
 	list_editable = ['item_price',]
 
