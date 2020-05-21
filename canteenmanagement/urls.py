@@ -29,10 +29,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api/', include('user.urls')),
     path('api/menu/', include('menu.urls')),
-    # path('api/breakfast/', include('breakfast.urls')),
-    # path('api/today-special/', include('today_special.urls')),
-    # path('api/snacks/', include('snacks.urls')),
-    # path('api/dinner/', include('dinner.urls')),
-    # path('api/lunch/', include('lunch.urls')),
     path('api/invoice/', include('invoice.urls')),
+    path('api/order/', include('order.urls')),
+    # path('api/item/', include('order.urls')),
 ]

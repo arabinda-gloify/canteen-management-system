@@ -42,11 +42,6 @@ INSTALLED_APPS = [
     # My Apps
     'user',
     'menu',
-    # 'today_special',
-    # 'breakfast',
-    # 'lunch',
-    # 'snacks',
-    # 'dinner',
     'invoice',
     'order',
 

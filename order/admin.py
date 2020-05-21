@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import OrderItem, Order
+from .models import OrderItem, Order, Item
 
 # Register your models here.
 
 
 
-class OrderAdmin(admin.ModelAdmin):
+# class OrderAdmin(admin.ModelAdmin):
 	# list_display = [
 	# 		# 'menu',
 	# 		'item_name',
@@ -25,18 +25,18 @@ class OrderAdmin(admin.ModelAdmin):
 
 	# list_filter = ['item_name',]
 
-	fields = [
-		# while creating user these field comes
-		'menu',
-		'item',
-		'price',
-		'title',
-	]
+	# fields = [
+	# 	# while creating user these field comes
+	# 	'menu',
+	# 	'item',
+	# 	'price',
+	# 	'title',
+	# ]
 
-admin.site.register(Order, OrderAdmin)
+admin.site.register(Order)
 
 
-class OrderItemAdmin(admin.ModelAdmin):
+# class OrderItemAdmin(admin.ModelAdmin):
 	# list_display = [
 	# 		# 'menu',
 	# 		'item_name',
@@ -56,11 +56,13 @@ class OrderItemAdmin(admin.ModelAdmin):
 
 	# list_filter = ['item_name',]
 
-	fields = [
-		# while creating user these field comes
-		# 'menu',
-		'item_name',
-		'price',
-	]
+	# fields = [
+	# 	# while creating user these field comes
+	# 	# 'menu',
+	# 	'item_name',
+	# 	'price',
+	# ]
 
-admin.site.register(OrderItem, OrderItemAdmin)
+
+admin.site.register(OrderItem)
+admin.site.register(Item)
