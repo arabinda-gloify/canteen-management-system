@@ -19,7 +19,7 @@ class Item(models.Model):
 		choices=CATEGORY_CHOICES, default="", max_length=2)
 	description = models.TextField(blank=True, null=True)
 	quantity = models.IntegerField(default=1)
-	slug = models.SlugField()
+	slug = models.SlugField(null=True)
 
 
 	def __str__(self):
@@ -41,7 +41,20 @@ class Order(models.Model):
 	ordered = models.BooleanField(default=False)
 
 	def __str__(self):
-		return self.user
+		return f'{self.user}'
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
